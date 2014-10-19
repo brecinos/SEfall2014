@@ -14,6 +14,8 @@ namespace PathGraph
         private Vertex _pointA, _pointB;
         private static int EdgeIDSequencer = 0;
         private int _edgeID;
+        private string _firstImage;
+        private string _secondImage;
 
 
         #region Properties
@@ -25,6 +27,23 @@ namespace PathGraph
                 return _edgeID;
             }
         }
+
+        public string FirstImage
+        {
+            get
+            {
+                return _firstImage;
+            }
+        }
+
+        public string SecondImage
+        {
+            get
+            {
+                return _secondImage;
+            }
+        }
+
 
         public float Cost
         {
@@ -56,11 +75,13 @@ namespace PathGraph
 
         #endregion
 
-        public Edge(Vertex firstPoint, Vertex secondPoint, float cost)
+        public Edge(Vertex firstPoint, Vertex secondPoint, float cost, string firstImage, string secondImage)
         {
             _cost = cost;
             _pointA = firstPoint; _pointB = secondPoint;
             _edgeID = ++EdgeIDSequencer;
+            _firstImage = firstImage;
+            _secondImage = secondImage;
         }
 
         public Vertex GetTheOtherVertex(Vertex baseVertex)
@@ -203,6 +224,12 @@ namespace PathGraph
             return (float)Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
         }
 
+        public string Type
+        {
+            get;
+            set;
+        }
+
         public override string ToString()
         {
             return "Vertex ID: " + _vertexID; // + "; Coords: X=" + _xCoord + ", Y=" + _yCoord;
@@ -295,7 +322,7 @@ namespace PathGraph
             return null;
         }
 
-        public bool AddEdge(String v1, String v2)
+        public bool AddEdge(String v1, String v2, string imagePath1, string imagePath2)
         {
             Vertex vtx1 = FindVertexByID(v1);
             Vertex vtx2 = FindVertexByID(v2);
@@ -305,7 +332,7 @@ namespace PathGraph
                 return false;
             }
 
-            AddEdge(new Edge(vtx1,vtx2,vtx1.distance(vtx2)));
+            AddEdge(new Edge(vtx1,vtx2,vtx1.distance(vtx2),imagePath1,imagePath2));
             return true;
         }
 
@@ -337,7 +364,6 @@ namespace PathGraph
             // Start the traversal across the graph
             this.PerformCalculationForAllNodes();
             //}
-
 
             //_totalCost = _targetNode.AggregateCost;
 

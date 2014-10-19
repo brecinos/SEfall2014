@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<layout>
+  <verticies>
+    <vertex name="h_j118" floor="1"  parent="" direction="n" length="0" type="hall"/>
+    <vertex name="j118" floor="1"  parent="h_j118" direction="e" length="1" type="room"/>
+    <vertex name="h_j115" floor="1"  parent="h_j118" direction="n" length="1" type="hall"/>
+    <vertex name="j115" floor="1"  parent="h_j115" direction="w" length="2" type="room"/>
+    <vertex name="h_j113" floor="1"  parent="h_j115" direction="n" length="2" type="hall"/>
+    <vertex name="j113" floor="1"  parent="h_j113" direction="e" length="2" type="room"/>
+  </verticies>
+  
+  <edges>
+    <edge v1="h_j118" v2="j118" img1="pic1.jpg" img2="pic2.jpg"/>
+    <edge v1="h_j115" v2="j115" img1="pic3.jpg" img2="pic4.jpg"/>
+    <edge v1="h_j113" v2="j113" img1="pic5.jpg" img2="pic6.jpg"/>
+    <edge v1="h_j118" v2="h_j115" img1="pich1.jpg" img2="pich2.jpg"/>
+    <edge v1="h_j115" v2="h_j113" img1="pich3.jpg" img2="pich4.jpg"/>
+  </edges>
+</layout>

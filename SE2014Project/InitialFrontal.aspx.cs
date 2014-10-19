@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using libSE2014;
 using PathGraph;
 
 
@@ -23,32 +25,24 @@ namespace SE2014Project
 
              Graph   gr = new Graph();
 
-            gr.AddVertex(new Vertex(0, 0, 0, "v1"));
-            gr.AddVertex(new Vertex(5, 0, 0, "v2"));
-            gr.AddVertex(new Vertex(5, 10, 0, "v3"));
-            gr.AddVertex(new Vertex(0, 10, 0, "v4"));
+             GraphLoader gl = new GraphLoader();
+             String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
+             bool success = gl.load(file);
 
-            gr.AddVertex(new Vertex(0, 0, 10, "v5"));
-            gr.AddVertex(new Vertex(5, 0, 10, "v6"));
-            gr.AddVertex(new Vertex(5, 10, 10, "v7"));
-            gr.AddVertex(new Vertex(0, 10, 10, "v8"));
+             var vtx = gl.GetVerticies();
+             var edges = gl.GetEdges();
 
-            gr.AddEdge("v1", "v2");
-            gr.AddEdge("v2", "v3");
-            gr.AddEdge("v3", "v4");
-            gr.AddEdge("v4", "v1");
+             foreach (var v in vtx)
+             {
+                 gr.AddVertex(v);
+             }
 
-            gr.AddEdge("v5", "v6");
-            gr.AddEdge("v6", "v7");
-            gr.AddEdge("v7", "v8");
-            gr.AddEdge("v8", "v5");
+             foreach (var e in edges)
+             {
+                 gr.AddEdge(e);
+             }
 
-            gr.AddEdge("v1", "v5");
-            gr.AddEdge("v2", "v6");
-            gr.AddEdge("v3", "v7");
-            gr.AddEdge("v4", "v8");
-
-            var path = gr.RetrieveShortestPath(gr.FindVertexByID("v1"), gr.FindVertexByID("v7"));
+            var path = gr.RetrieveShortestPath(gr.FindVertexByID("j113"), gr.FindVertexByID("j118"));
 
             string myVal ="";
 
