@@ -27,6 +27,14 @@
             </asp:TableRow>
 
         </asp:Table>
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Height="247px" Width="601px">
+            <Columns>
+                <asp:BoundField DataField="VertexName" HeaderText="Vertex" SortExpression="VertexName" />
+                <asp:ImageField DataImageUrlField="Image" HeaderText="Image">
+                </asp:ImageField>
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>

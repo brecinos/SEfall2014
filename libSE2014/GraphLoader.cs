@@ -80,7 +80,7 @@ namespace libSE2014
 
         private GraphLoaderPoint VectorFromAngle(double deg)
         {
-            double deg2rad = (Math.PI / 180.0);
+            double deg2rad = deg * (Math.PI / 180.0);
 
             GraphLoaderPoint p = new GraphLoaderPoint();
             p.X = Math.Sin(deg2rad);
