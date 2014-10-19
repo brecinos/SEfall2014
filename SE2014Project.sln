@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE2014Project", "SE2014Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libSE2014", "libSE2014\libSE2014.csproj", "{25EB0E7A-D60C-4A39-8740-BA8ACF60D924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBuilder", "..\..\..\GraphBuilder\GraphBuilder\GraphBuilder.csproj", "{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBuilder", "GraphBuilder\GraphBuilder\GraphBuilder.csproj", "{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
