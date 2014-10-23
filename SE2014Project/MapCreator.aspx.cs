@@ -9,11 +9,14 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.Xml.Linq;
 using System.Web.Hosting;
+using libSE2014;
+using PathGraph;
 
 namespace SE2014Project
 {
     public partial class MapCreator : System.Web.UI.Page
     {
+        /*
         private List<GraphVertex> verticies = new List<GraphVertex>();
         private List<GraphEdge> edges = new List<GraphEdge>();
 
@@ -69,7 +72,7 @@ namespace SE2014Project
         {
             return Vert1 + " <=> " + Vert2;
         }
-    } 
+    } */
 
         public void drawSomething()
         {
@@ -101,8 +104,8 @@ namespace SE2014Project
            // g.FillEllipse(new LinearGradientBrush(new Rectangle(0, 100, 50, 50),
            // Color.Plum, Color.Red, 20), 0, 100, 50, 50);
 
-
             //drawing objects
+
             g.DrawLine(new Pen(Color.Black), 50, 125, 100, 125);
             g.DrawString("J-9", new Font("Arial", 12, FontStyle.Italic),SystemBrushes.WindowText, new PointF(x, 50));
             g.DrawLine(new Pen(Color.Yellow), 55, 130, 110, 130);
@@ -123,8 +126,87 @@ namespace SE2014Project
 
         public void DrawSomethingBR(int begin, int end) {
 
+            // reading the xml section
+            //declaring variables
 
-        
+            Graph gr = new Graph();
+
+            GraphLoader gl = new GraphLoader();
+            String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
+            bool success = gl.load(file);
+
+            var vtx = gl.GetVerticies();
+            var edges = gl.GetEdges();
+
+
+
+            //String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
+            //XDocument doc = XDocument.Load(file);
+            if (success==true)
+            {
+
+                // 
+                var myOutputValue = "";
+
+
+           
+                foreach (var v in vtx)
+                {
+                    gr.AddVertex(v);
+                }
+
+                foreach (var e in edges)
+                {
+                    gr.AddEdge(e);
+                }
+
+                var path = gr.RetrieveShortestPath(gr.FindVertexByID("j113"), gr.FindVertexByID("j118"));
+
+
+                // drawing section
+                Response.Clear();
+                int height = 400;
+                int width = 600;
+                Random r = new Random();
+                int x = r.Next(75);
+
+                //creating the bitmap
+                Bitmap bmp = new Bitmap(width, height);
+                Graphics g = Graphics.FromImage(bmp);
+
+                //g.TextRenderingHint = TextRenderingHint.AntiAlias;
+
+                //adding the solidbrush
+                SolidBrush solidWhiteBrush = new SolidBrush(Color.White);
+
+                //fillRectangle
+                g.FillRectangle(solidWhiteBrush, 0, 0, 600, 400);
+
+                //fillElipse
+                // g.FillEllipse(new LinearGradientBrush(new Rectangle(0, 100, 50, 50),
+                // Color.Plum, Color.Red, 20), 0, 100, 50, 50);
+
+                //drawing objects
+
+                foreach (Vertex v in path)
+                {
+                    var Room = v.VertexID.ToString();
+                    var TypeRoom = v.Type.ToString();
+                    g.DrawLine(new Pen(Color.Black), 50, 125, 100, 125);
+                    //g.DrawLine(new Pen(Color.Black), 50, 125, 100, 125);
+                    g.DrawString(Room+" " +TypeRoom, new Font("Arial", 12, FontStyle.Italic), SystemBrushes.WindowText, new PointF(x, 50));
+                   // g.DrawLine(new Pen(Color.Yellow), 55, 130, 110, 130);
+                   // g.DrawString("J-110", new Font("Arial", 12, FontStyle.Italic), SystemBrushes.WindowText, new PointF(x + 5, 130));
+                }
+
+                string value1 = myOutputValue + " " + ",";
+                
+            }
+            else {
+
+                var myError = "no xml file";
+                string value2 = myError;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -137,80 +219,6 @@ namespace SE2014Project
         
 
 
-        public void ReadXmlFile()
-        {
-
-            //declaring variables
-            String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
-            XDocument doc = XDocument.Load(file);
-            if (doc != null)
-            {
-
-                // 
-                var myOutputValue = "";
-
-
-                //var rooms = doc.Root.Elements().Select(x => x.Element("verticies"));
-                //var rooms = doc.Root.Element(.Select(x => x.Element("verticies"));
-
-                /*here to construct the xml*/
-                IEnumerable<XElement> elems =
-                    doc.Element("layout").Elements();
-
-                IEnumerable<XElement> verts =
-                    elems.Where(o => o.Name == "verticies").Elements();
-
-                IEnumerable<XElement> edges =
-                elems.Where(o => o.Name == "edges").Elements();
-
-                List<GraphVertex> glVerts = new List<GraphVertex>();
-                List<GraphEdge> glEdges = new List<GraphEdge>();
-
-                foreach (var v in verts)
-                {
-                    GraphVertex vtx = new GraphVertex();
-                    vtx.Name = v.Attribute("name").Value;
-                    vtx.Floor = v.Attribute("floor").Value;
-                    vtx.Parent = v.Attribute("parent").Value;
-                    vtx.Direction = v.Attribute("direction").Value;
-                    vtx.Length = v.Attribute("length").Value;
-                    vtx.Type = v.Attribute("type").Value;
-
-                    glVerts.Add(vtx);
-                }
-
-                foreach (var ed in edges)
-                {
-                    GraphEdge edge = new GraphEdge();
-                    edge.Vert1 = ed.Attribute("v1").Value;
-                    edge.Vert2 = ed.Attribute("v2").Value;
-                    edge.Pic1 = ed.Attribute("img1").Value;
-                    edge.Pic2 = ed.Attribute("img2").Value;
-                    glEdges.Add(edge);
-                }
-
-                this.verticies = glVerts;
-                this.edges = glEdges;
-
-
-
-                foreach (var v in verts)
-                {
-                    myOutputValue += v.Attribute("name").Value.ToString();
-                }
-
-                string value1 = myOutputValue + " " + ",";
-                //Label1.Text = myOutputValue+" "+ ",";
-
-
-            }
-            else
-            {
-                var myError = "no xml file";
-                string value2 = myError;
-                //Label1.Text = myError;
-            }
-
-        }
+       
         }
 }
