@@ -16,63 +16,6 @@ namespace SE2014Project
 {
     public partial class MapCreator : System.Web.UI.Page
     {
-        /*
-        private List<GraphVertex> verticies = new List<GraphVertex>();
-        private List<GraphEdge> edges = new List<GraphEdge>();
-
-        public class GraphVertex
-    {
-        public GraphVertex()
-        {
-        }
-
-        public string Name
-        { get; set; }
-
-        public string Floor
-        { get; set; }
-
-        public string Parent
-        { get; set; }
-
-        public string Direction
-        { get; set; }
-
-        public string Length
-        { get; set; }
-
-        public string Type
-        { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
-    }
-
-        public  class GraphEdge
-    {
-        public GraphEdge()
-        {
-        }
-
-        public string Vert1
-        { get; set; }
-
-        public string Vert2
-        { get; set; }
-
-        public string Pic1
-        { get; set; }
-
-        public string Pic2
-        { get; set; }
-
-        public override string ToString()
-        {
-            return Vert1 + " <=> " + Vert2;
-        }
-    } */
 
         public void drawSomething()
         {
