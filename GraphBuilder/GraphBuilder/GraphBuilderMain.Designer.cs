@@ -139,9 +139,12 @@
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "room",
+            "hall",
             "toilet_m",
             "toilet_f",
-            "janitor"});
+            "janitor",
+            "exit",
+            "door"});
             this.cbType.Location = new System.Drawing.Point(65, 229);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(100, 21);
@@ -238,6 +241,7 @@
             // cbParent
             // 
             this.cbParent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParent.DropDownWidth = 300;
             this.cbParent.FormattingEnabled = true;
             this.cbParent.Location = new System.Drawing.Point(65, 59);
             this.cbParent.Name = "cbParent";
@@ -437,6 +441,7 @@
             // cbEdgeVertex2
             // 
             this.cbEdgeVertex2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEdgeVertex2.DropDownWidth = 300;
             this.cbEdgeVertex2.FormattingEnabled = true;
             this.cbEdgeVertex2.Location = new System.Drawing.Point(73, 69);
             this.cbEdgeVertex2.Name = "cbEdgeVertex2";
@@ -446,6 +451,7 @@
             // cbEdgeVertex1
             // 
             this.cbEdgeVertex1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEdgeVertex1.DropDownWidth = 300;
             this.cbEdgeVertex1.FormattingEnabled = true;
             this.cbEdgeVertex1.Location = new System.Drawing.Point(73, 31);
             this.cbEdgeVertex1.Name = "cbEdgeVertex1";
@@ -577,7 +583,7 @@
             this.pnlMap.BackColor = System.Drawing.Color.White;
             this.pnlMap.Location = new System.Drawing.Point(913, 31);
             this.pnlMap.Name = "pnlMap";
-            this.pnlMap.Size = new System.Drawing.Size(345, 453);
+            this.pnlMap.Size = new System.Drawing.Size(527, 453);
             this.pnlMap.TabIndex = 10;
             this.pnlMap.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.pnlMap.Resize += new System.EventHandler(this.panel1_Resize);
@@ -637,7 +643,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 563);
+            this.ClientSize = new System.Drawing.Size(1448, 565);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShowMap);
             this.Controls.Add(this.cbMapFloor);

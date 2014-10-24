@@ -42,14 +42,19 @@ namespace SE2014Project
                  gr.AddEdge(e);
              }
 
-            var path = gr.RetrieveShortestPath(gr.FindVertexByID("j113"), gr.FindVertexByID("j118"));
+            var path = gr.RetrieveShortestPath(gr.FindVertexByID("J103"), gr.FindVertexByID("J116"));
+
+            var assembler = new GraphPathAssembler(path, edges, "");
+            var assemPath = assembler.GeneratePath();
 
             string myVal ="";
 
-            foreach (Vertex v in path)
+            foreach (var g in assemPath)
             {
-                  myVal += v.ToString() + ",";
+                  myVal += g.Vertex.VertexID + " - " + g.DirectionString + " THEN ";
             }
+
+
 
             this.Label1.Text = myVal;
         

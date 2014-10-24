@@ -224,6 +224,15 @@ namespace PathGraph
             return (float)Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
         }
 
+
+        public double distance2D(Vertex v2)
+        {
+            double deltaX = v2.XCoord - XCoord;
+            double deltaY = v2.YCoord - YCoord;
+
+            return (double)Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+        }
+
         public string Type
         {
             get;
@@ -425,6 +434,23 @@ namespace PathGraph
             }
 
             return connectedEdges;
+        }
+
+
+        public List<Vertex> Verticies
+        {
+            get
+            {
+                return _listOfNodes;
+            }
+        }
+
+        public List<Edge> Edges
+        {
+            get
+            {
+                return _listOfEdges;
+            }
         }
 
 

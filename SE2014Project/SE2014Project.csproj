@@ -60,16 +60,33 @@
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Imageviewer.aspx" />
     <Content Include="InitialFrontal.aspx" />
+    <Content Include="MapCreator.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\AppContext.cs" />
+    <Compile Include="Imageviewer.aspx.cs">
+      <DependentUpon>Imageviewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Imageviewer.aspx.designer.cs">
+      <DependentUpon>Imageviewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InitialFrontal.aspx.cs">
       <DependentUpon>InitialFrontal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InitialFrontal.aspx.designer.cs">
       <DependentUpon>InitialFrontal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapCreator.aspx.cs">
+      <DependentUpon>MapCreator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapCreator.aspx.designer.cs">
+      <DependentUpon>MapCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

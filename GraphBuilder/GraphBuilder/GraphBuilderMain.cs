@@ -578,7 +578,7 @@ namespace GraphBuilder
                 bufferGrph.FillRectangle(new SolidBrush(Color.White), 0,0,buffer.Width,buffer.Height);
                 bufferGrph.TranslateTransform(buffer.Width / 2, buffer.Height / 2);
 
-                float mul = 25.0f;
+                float mul = 50.0f;
 
                 foreach (var edge in edges)
                 {
@@ -595,9 +595,9 @@ namespace GraphBuilder
                         var posV1 = GetAbsPosition(v1);
                         var posV2 = GetAbsPosition(v2);
 
-                        bufferGrph.DrawLine(new Pen(Color.Black,2.0f), (int)(posV1.X * mul), (int)(posV1.Y * mul), (int)(posV2.X * mul), (int)(posV2.Y * mul));
-                        bufferGrph.DrawString(v1.Name, new Font("arial", 6), new SolidBrush(Color.Red), new PointF((float)posV1.X * mul, (float)posV1.Y * mul));
-                        bufferGrph.DrawString(v2.Name, new Font("arial", 6), new SolidBrush(Color.Red), new PointF((float)posV2.X * mul, (float)posV2.Y * mul));
+                        bufferGrph.DrawLine(new Pen(Color.Black,2.0f), (int)(posV1.X * mul), (int)(-posV1.Y * mul), (int)(posV2.X * mul), (int)(-posV2.Y * mul));
+                        bufferGrph.DrawString(v1.Name, new Font("arial", 6), new SolidBrush(Color.Red), new PointF((float)posV1.X * mul, (float)-posV1.Y * mul));
+                        bufferGrph.DrawString(v2.Name, new Font("arial", 6), new SolidBrush(Color.Red), new PointF((float)posV2.X * mul, (float)-posV2.Y * mul));
                     }
                 }
             }
