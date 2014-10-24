@@ -113,9 +113,6 @@ namespace libSE2014
             if (v1 == null || v2 == null || v3 == null)
                 return Direction.Forward;
 
-            v1 = new Vertex(0.0f, 0.0f, 0.0f,"");
-            v2 = new Vertex(0.0f, -10.0f, 0.0f, "");
-            v3 = new Vertex(5.0f, -10.0f, 0.0f, "");
 
             double p12 = v1.distance2D(v2);
             double p13 = v1.distance2D(v3);
