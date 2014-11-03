@@ -184,5 +184,40 @@ namespace libSE2014
 
             return path;
         }
+
+        public List<GraphPathComponent> GenerateOptimizedPath()
+        {
+            var path = GeneratePath();
+
+            var opPath = new List<GraphPathComponent>();
+
+            if (path.Count < 2)
+                return path;
+
+            GraphPathComponent previous = null;
+            GraphPathComponent current = null;
+            GraphPathComponent next = null;
+            for (int i = 0; i < path.Count - 1; i++)
+            {
+                current = path[i];
+                next = path[i + 1];
+
+                if (previous != null && current != null && next != null)
+                {
+                    if (previous.Direction != Direction.Forward || current.Direction != Direction.Forward ||
+                        next.Direction != Direction.Forward)
+                    {
+                        if(opPath.Where( x => x.ImagePath == current.ImagePath).Count() == 0)
+                        opPath.Add(current);
+                    }
+                }
+                previous = path[i];
+            }
+
+            if (next != null)
+                opPath.Add(next);
+
+            return opPath;
+        }
     }
 }

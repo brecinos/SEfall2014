@@ -27,6 +27,7 @@
             </asp:TableRow>
 
         </asp:Table>
+        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
         <br />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Height="247px" Width="601px">
             <Columns>
