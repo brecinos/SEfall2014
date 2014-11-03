@@ -114,36 +114,16 @@ namespace libSE2014
                 return Direction.Forward;
 
 
-            double p12 = v1.distance2D(v2);
-            double p13 = v1.distance2D(v3);
-            double p23 = v2.distance2D(v3);
+            double ax = v2.XCoord - v1.XCoord;
+            double ay = v2.YCoord - v1.YCoord;
+            double bx = v3.XCoord - v2.XCoord;
+            double by = v3.YCoord - v2.YCoord;
 
-            double p12S = p12 * p12;
-            double p13S = p13 * p13;
-            double p23S = p23 * p23;
+            double z = ax * by - ay * bx;
 
-            double a = p12S + p13S - p23S;
-            double b = 2 * p12 * p13;
-
-            if(b == 0.0)
-                 return Direction.Forward;
-
-            double angle = Math.Acos(a / b);
-
-            double thresh = 0.0;
-            if(angle >= -thresh && angle <= thresh)
-            {
-                return Direction.Forward;
-            }
-            else if (angle > 0 && angle < Math.PI)
-            {
-                return Direction.Right;
-            }
-            else
-            {
-                return Direction.Left;
-            }
-
+            if (z > 0.0) return Direction.Left;
+            if (z < 0.0) return Direction.Right;
+            return Direction.Forward;
         }
 
         public GraphPathAssembler(List<Vertex> pathVerticies, List<Edge> allEdges, String imageRelativePath)
