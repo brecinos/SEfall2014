@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using libSE2014;
 using PathGraph;
+using System.Collections;
 
 
 namespace SE2014Project
@@ -16,12 +17,17 @@ namespace SE2014Project
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                ShowData();
+                this.Label1.Visible = false;
+                //fillDropDowns();
+                //ShowData();
             }
         }
 
-        protected void ShowData() {
 
+       
+
+        protected void ShowData() {
+            this.Label1.Visible = true;
 
              Graph   gr = new Graph();
 
@@ -31,6 +37,11 @@ namespace SE2014Project
 
              var vtx = gl.GetVerticies();
              var edges = gl.GetEdges();
+
+             var initialroom = this.TextBox1.Text.Trim(); 
+             var finalroom = this.TextBox2.Text.Trim();
+
+
 
              foreach (var v in vtx)
              {
@@ -42,7 +53,8 @@ namespace SE2014Project
                  gr.AddEdge(e);
              }
 
-            var path = gr.RetrieveShortestPath(gr.FindVertexByID("J103"), gr.FindVertexByID("J116"));
+             var path = gr.RetrieveShortestPath(gr.FindVertexByID(initialroom), gr.FindVertexByID(finalroom));
+            
 
             var assembler = new GraphPathAssembler(path, edges, @"\Images");
             var assemPath = assembler.GenerateOptimizedPath();
@@ -62,6 +74,21 @@ namespace SE2014Project
 
             this.Literal1.Text = myVal;
         
+        }
+
+        protected void ButtonGo_Click(object sender, EventArgs e)
+        {
+
+            if (TextBox1.Text != "" && TextBox2.Text != "")
+            {
+                ShowData();
+            }
+            else {
+
+                this.Literal1.Text = "no valid names for rooms";
+            }
+            
+
         }
 
     }
