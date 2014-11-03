@@ -44,19 +44,23 @@ namespace SE2014Project
 
             var path = gr.RetrieveShortestPath(gr.FindVertexByID("J103"), gr.FindVertexByID("J116"));
 
-            var assembler = new GraphPathAssembler(path, edges, "");
-            var assemPath = assembler.GeneratePath();
+            var assembler = new GraphPathAssembler(path, edges, @"\Images");
+            var assemPath = assembler.GenerateOptimizedPath();
 
             string myVal ="";
 
             foreach (var g in assemPath)
             {
-                  myVal += g.Vertex.VertexID + " - " + g.DirectionString + " THEN ";
+                  myVal += "From where you are standing, Go " +   g.DirectionString + " and you will see: <br></br><img src=\"" + g.ImagePath + "\"> <br></br>";
+                  if (g == assemPath.Last())
+                  {
+                      myVal += "You have reached " + g.DestinationVertex.VertexID;
+                  }
             }
 
 
 
-            this.Label1.Text = myVal;
+            this.Literal1.Text = myVal;
         
         }
 

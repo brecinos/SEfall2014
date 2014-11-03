@@ -57,27 +57,153 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="3dViewer.aspx" />
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\IMG_1948.jpg" />
     <Content Include="Images\IMG_1949.jpg" />
     <Content Include="Images\IMG_1950.jpg" />
+    <Content Include="Images\J100\IMG_1913.jpg" />
+    <Content Include="Images\J100\IMG_1914.jpg" />
+    <Content Include="Images\J100\IMG_1915.jpg" />
+    <Content Include="Images\J100\IMG_1916.jpg" />
+    <Content Include="Images\J100\IMG_1917.jpg" />
+    <Content Include="Images\J100\IMG_1918.jpg" />
+    <Content Include="Images\J100\IMG_1919.jpg" />
+    <Content Include="Images\J100\IMG_1920.jpg" />
+    <Content Include="Images\J100\IMG_1921.jpg" />
+    <Content Include="Images\J100\IMG_1922.jpg" />
+    <Content Include="Images\J100\IMG_1923.jpg" />
+    <Content Include="Images\J100\IMG_1924.jpg" />
+    <Content Include="Images\J100\IMG_1925.jpg" />
+    <Content Include="Images\J100\IMG_1926.jpg" />
+    <Content Include="Images\J100\IMG_1927.jpg" />
+    <Content Include="Images\J100\IMG_1928.jpg" />
+    <Content Include="Images\J100\IMG_1929.jpg" />
+    <Content Include="Images\J100\IMG_1930.jpg" />
+    <Content Include="Images\J100\IMG_1931.jpg" />
+    <Content Include="Images\J100\IMG_1932.jpg" />
+    <Content Include="Images\J100\IMG_1933.jpg" />
+    <Content Include="Images\J100\IMG_1934.jpg" />
+    <Content Include="Images\J100\IMG_1935.jpg" />
+    <Content Include="Images\J100\IMG_1936.jpg" />
+    <Content Include="Images\J100\IMG_1937.jpg" />
+    <Content Include="Images\J100\IMG_1939.jpg" />
+    <Content Include="Images\J100\IMG_1940.jpg" />
+    <Content Include="Images\J100\IMG_1941.jpg" />
+    <Content Include="Images\J100\IMG_1942.jpg" />
+    <Content Include="Images\J100\IMG_1943.jpg" />
+    <Content Include="Images\J100\IMG_1944.jpg" />
+    <Content Include="Images\J100\IMG_1945.jpg" />
+    <Content Include="Images\J100\IMG_1946.jpg" />
+    <Content Include="Images\J100\IMG_1947.jpg" />
+    <Content Include="Images\J100\IMG_1948.jpg" />
+    <Content Include="Images\J100\IMG_1949.jpg" />
+    <Content Include="Images\J100\IMG_1950.jpg" />
+    <Content Include="Images\J100\IMG_1951.jpg" />
+    <Content Include="Images\J100\IMG_1952.jpg" />
+    <Content Include="Images\J100\IMG_1953.jpg" />
+    <Content Include="Images\J100\IMG_1954.jpg" />
+    <Content Include="Images\J100\IMG_1955.jpg" />
+    <Content Include="Images\J100\IMG_1956.jpg" />
+    <Content Include="Images\J100\IMG_1957.jpg" />
+    <Content Include="Images\J100\IMG_1958.jpg" />
+    <Content Include="Images\J100\IMG_1959.jpg" />
+    <Content Include="Images\J100\IMG_1960.jpg" />
+    <Content Include="Images\J100\IMG_1961.jpg" />
+    <Content Include="Images\J100\IMG_1962.jpg" />
+    <Content Include="Images\J100\IMG_1963.jpg" />
+    <Content Include="Images\J100\IMG_1964.jpg" />
+    <Content Include="Images\J100\IMG_1965.jpg" />
+    <Content Include="Images\J100\IMG_1966.jpg" />
+    <Content Include="Images\J100\IMG_1967.jpg" />
+    <Content Include="Images\J100\IMG_1968.jpg" />
+    <Content Include="Images\J100\IMG_1969.jpg" />
+    <Content Include="Images\J100\IMG_1970.jpg" />
+    <Content Include="Images\J100\IMG_1971.jpg" />
+    <Content Include="Images\J100\IMG_1972.jpg" />
+    <Content Include="Images\J100\IMG_1973.jpg" />
+    <Content Include="Images\J100\IMG_1974.jpg" />
+    <Content Include="Images\J100\IMG_1975.jpg" />
+    <Content Include="Images\J100\IMG_1976.jpg" />
+    <Content Include="Images\J100\IMG_1977.jpg" />
+    <Content Include="Images\J100\IMG_1978.jpg" />
+    <Content Include="Images\J100\IMG_1979.jpg" />
+    <Content Include="Images\J100\IMG_1981.jpg" />
+    <Content Include="Images\J100\IMG_1982.jpg" />
+    <Content Include="Images\J100\IMG_1983.jpg" />
+    <Content Include="Images\J100\IMG_1984.jpg" />
+    <Content Include="Images\J100\IMG_1985.jpg" />
+    <Content Include="Images\J100\IMG_1986.jpg" />
+    <Content Include="Images\J100\IMG_1987.jpg" />
+    <Content Include="Images\J100\IMG_1988.jpg" />
+    <Content Include="Images\J100\IMG_1989.jpg" />
+    <Content Include="Images\J100\IMG_1990.jpg" />
+    <Content Include="Images\J100\IMG_1991.jpg" />
+    <Content Include="Images\J100\IMG_1992.jpg" />
+    <Content Include="Images\J100\IMG_1993.jpg" />
+    <Content Include="Images\J100\IMG_1994.jpg" />
+    <Content Include="Images\J100\IMG_1995.jpg" />
+    <Content Include="Images\J100\IMG_1996.jpg" />
+    <Content Include="Images\J100\IMG_1997.jpg" />
+    <Content Include="Images\J100\IMG_1998.jpg" />
+    <Content Include="Images\J100\IMG_2000.jpg" />
+    <Content Include="Images\J100\IMG_2001.jpg" />
+    <Content Include="Images\J100\IMG_2002.jpg" />
+    <Content Include="Images\J100\IMG_2003.jpg" />
+    <Content Include="Images\J100\IMG_2004.jpg" />
+    <Content Include="Images\J100\IMG_2005.jpg" />
+    <Content Include="Images\J100\IMG_2006.jpg" />
+    <Content Include="Images\J100\IMG_2007.jpg" />
+    <Content Include="Images\J100\IMG_2008.jpg" />
+    <Content Include="Images\J100\IMG_2009.jpg" />
+    <Content Include="Images\J100\IMG_2010.jpg" />
+    <Content Include="Images\J100\IMG_2011.jpg" />
+    <Content Include="Images\J100\IMG_2012.jpg" />
+    <Content Include="Images\J100\IMG_2013.jpg" />
+    <Content Include="Images\J100\IMG_2014.jpg" />
+    <Content Include="Images\J100\IMG_2015.jpg" />
+    <Content Include="Images\J100\IMG_2016.jpg" />
+    <Content Include="Images\J100\IMG_2017.jpg" />
+    <Content Include="Images\J100\IMG_2018.jpg" />
+    <Content Include="Images\J100\IMG_2019.jpg" />
+    <Content Include="Images\J100\IMG_2020.jpg" />
+    <Content Include="Images\J100\IMG_2021.jpg" />
+    <Content Include="Images\J100\IMG_2022.jpg" />
+    <Content Include="Images\J100\IMG_2023.jpg" />
+    <Content Include="Images\J100\IMG_2024.jpg" />
+    <Content Include="Images\J100\IMG_2025.jpg" />
+    <Content Include="Images\J100\IMG_2026.jpg" />
+    <Content Include="Images\J100\IMG_2027.jpg" />
+    <Content Include="Images\J100\IMG_2028.jpg" />
+    <Content Include="Images\J100\IMG_2029.jpg" />
+    <Content Include="Images\J100\IMG_2030.jpg" />
+    <Content Include="Images\J100\IMG_2031.jpg" />
+    <Content Include="Images\J100\IMG_2032.jpg" />
+    <Content Include="Images\J100\IMG_2033.jpg" />
+    <Content Include="Images\J100\IMG_2034.jpg" />
+    <Content Include="Images\J100\IMG_2035.jpg" />
+    <Content Include="Images\J100\IMG_2036.jpg" />
+    <Content Include="Images\J100\IMG_2037.jpg" />
+    <Content Include="Images\J100\IMG_2038.jpg" />
+    <Content Include="Images\J100\IMG_2039.jpg" />
+    <Content Include="Images\J100\IMG_2040.jpg" />
+    <Content Include="Images\J100\IMG_2041.jpg" />
+    <Content Include="Images\J100\IMG_2042.jpg" />
+    <Content Include="Images\J100\IMG_2043.jpg" />
+    <Content Include="Images\J100\IMG_2044.jpg" />
+    <Content Include="Images\J100\IMG_2045.jpg" />
+    <Content Include="Images\J100\IMG_2046.jpg" />
+    <Content Include="Images\J100\IMG_2047.jpg" />
+    <Content Include="Images\J100\IMG_2048.jpg" />
+    <Content Include="Images\J100\IMG_2049.jpg" />
+    <Content Include="Images\J100\IMG_2050.jpg" />
     <Content Include="Imageviewer.aspx" />
-    <Content Include="IMG_1949.jpg" />
     <Content Include="InitialFrontal.aspx" />
     <Content Include="MapCreator.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="3dViewer.aspx.cs">
-      <DependentUpon>3dViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="3dViewer.aspx.designer.cs">
-      <DependentUpon>3dViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Code\AppContext.cs" />
     <Compile Include="Imageviewer.aspx.cs">
       <DependentUpon>Imageviewer.aspx</DependentUpon>
@@ -101,11 +227,6 @@
       <DependentUpon>MapCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
@@ -121,15 +242,7 @@
       <Name>libSE2014</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\J100\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -30,32 +30,32 @@
     <vertex name="J116" floor="1.0" parent="J 1st 116-Door" direction="n" length="0.25" type="room" />
   </verticies>
   <edges>
-    <edge v1="J 1st RWing Exit" v2="J 1st RWing Intersection" img1="" img2="" />
-    <edge v1="J 1st RWing Intersection" v2="J 1st RWing Lower-Door" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-Door" v2="J 1st RWing Lower-End" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-End" v2="J 1st RWing Lower-Turn" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-Turn" v2="J 1st RWing Lower-104A" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104A" v2="J 1st RWing Lower-104B" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104A" v2="J104A" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104B" v2="J104B" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104A" v2="J102" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-103" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-103" v2="J103" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-Door" v2="J 1st RWing Door" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-104B" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104C" v2="J104C" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-104D" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104D" v2="J104D" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104D" v2="J 1st RWing Lower-104E" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104E" v2="J104E" img1="" img2="" />
-    <edge v1="J 1st RWing Lower-104E" v2="J 1st RWing Lower-Exit" img1="" img2="" />
-    <edge v1="J 1st RWing Intersection" v2="J 1st - 101" img1="" img2="" />
-    <edge v1="J 1st - 101" v2="J101" img1="" img2="" />
-    <edge v1="J 1st - 101" v2="J 1st - 105-116B" img1="" img2="" />
-    <edge v1="J 1st - 105-116B" v2="J105" img1="" img2="" />
-    <edge v1="J 1st - 105-116B" v2="J116B" img1="" img2="" />
-    <edge v1="J 1st - 105-116B" v2="J 1st 116-Door" img1="" img2="" />
-    <edge v1="J 1st 116-Door" v2="J116-Door" img1="" img2="" />
-    <edge v1="J 1st 116-Door" v2="J116" img1="" img2="" />
+    <edge v1="J 1st RWing Exit" v2="J 1st RWing Intersection" img1="\J100\IMG_1972.jpg" img2="\J100\IMG_1940.jpg" />
+    <edge v1="J 1st RWing Intersection" v2="J 1st RWing Lower-Door" img1="\J100\IMG_2009.jpg" img2="\J100\IMG_2011.jpg" />
+    <edge v1="J 1st RWing Lower-Door" v2="J 1st RWing Lower-End" img1="\J100\IMG_2009.jpg" img2="\J100\IMG_2011.jpg" />
+    <edge v1="J 1st RWing Lower-End" v2="J 1st RWing Lower-Turn" img1="\J100\IMG_2013.jpg" img2="\J100\IMG_2010.jpg" />
+    <edge v1="J 1st RWing Lower-Turn" v2="J 1st RWing Lower-104A" img1="\J100\IMG_2027.jpg" img2="\J100\IMG_2026.jpg" />
+    <edge v1="J 1st RWing Lower-104A" v2="J 1st RWing Lower-104B" img1="\J100\IMG_2027.jpg" img2="\J100\IMG_2025.jpg" />
+    <edge v1="J 1st RWing Lower-104A" v2="J104A" img1="\J100\IMG_2012.jpg" img2="\J100\IMG_2013.jpg" />
+    <edge v1="J 1st RWing Lower-104B" v2="J104B" img1="\J100\IMG_2014.jpg" img2="\J100\IMG_2015.jpg" />
+    <edge v1="J 1st RWing Lower-104A" v2="J102" img1="\J100\IMG_2015.jpg" img2="\J100\IMG_2012.jpg" />
+    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-103" img1="\J100\IMG_2027.jpg" img2="\J100\IMG_2025.jpg" />
+    <edge v1="J 1st RWing Lower-103" v2="J103" img1="\J100\IMG_2018.jpg" img2="\J100\IMG_2023.jpg" />
+    <edge v1="J 1st RWing Lower-Door" v2="J 1st RWing Door" img1="\J100\IMG_2010.jpg" img2="\J100\IMG_2013.jpg" />
+    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-104B" img1="\J100\IMG_2026.jpg" img2="\J100\IMG_2027.jpg" />
+    <edge v1="J 1st RWing Lower-104C" v2="J104C" img1="\J100\IMG_2016.jpg" img2="\J100\IMG_2017.jpg" />
+    <edge v1="J 1st RWing Lower-104C" v2="J 1st RWing Lower-104D" img1="\J100\IMG_2027.jpg" img2="\J100\IMG_2025.jpg" />
+    <edge v1="J 1st RWing Lower-104D" v2="J104D" img1="\J100\IMG_2020.jpg" img2="\J100\IMG_2021.jpg" />
+    <edge v1="J 1st RWing Lower-104D" v2="J 1st RWing Lower-104E" img1="\J100\IMG_2027.jpg" img2="\J100\IMG_2025.jpg" />
+    <edge v1="J 1st RWing Lower-104E" v2="J104E" img1="\J100\IMG_2022.jpg" img2="\J100\IMG_2023.jpg" />
+    <edge v1="J 1st RWing Lower-104E" v2="J 1st RWing Lower-Exit" img1="\J100\IMG_2024.jpg" img2="\J100\IMG_2025.jpg" />
+    <edge v1="J 1st RWing Intersection" v2="J 1st - 101" img1="\J100\IMG_1951.jpg" img2="\J100\IMG_1940.jpg" />
+    <edge v1="J 1st - 101" v2="J101" img1="\J100\IMG_1941.jpg" img2="\J100\IMG_1942.jpg" />
+    <edge v1="J 1st - 101" v2="J 1st - 105-116B" img1="\J100\IMG_1951.jpg" img2="\J100\IMG_2007.jpg" />
+    <edge v1="J 1st - 105-116B" v2="J105" img1="\J100\IMG_1944.jpg" img2="\J100\IMG_1945.jpg" />
+    <edge v1="J 1st - 105-116B" v2="J116B" img1="\J100\IMG_1943.jpg" img2="\J100\IMG_1944.jpg" />
+    <edge v1="J 1st - 105-116B" v2="J 1st 116-Door" img1="\J100\IMG_1951.jpg" img2="\J100\IMG_2002.jpg" />
+    <edge v1="J 1st 116-Door" v2="J116-Door" img1="\J100\IMG_1945.jpg" img2="\J100\IMG_1947.jpg" />
+    <edge v1="J 1st 116-Door" v2="J116" img1="\J100\IMG_1947.jpg" img2="\J100\IMG_1945.jpg" />
   </edges>
 </layout>
