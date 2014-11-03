@@ -57,7 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="3dViewer.aspx" />
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -65,19 +64,11 @@
     <Content Include="Images\IMG_1949.jpg" />
     <Content Include="Images\IMG_1950.jpg" />
     <Content Include="Imageviewer.aspx" />
-    <Content Include="IMG_1949.jpg" />
     <Content Include="InitialFrontal.aspx" />
     <Content Include="MapCreator.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="3dViewer.aspx.cs">
-      <DependentUpon>3dViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="3dViewer.aspx.designer.cs">
-      <DependentUpon>3dViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Code\AppContext.cs" />
     <Compile Include="Imageviewer.aspx.cs">
       <DependentUpon>Imageviewer.aspx</DependentUpon>
