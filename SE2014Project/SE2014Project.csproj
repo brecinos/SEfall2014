@@ -57,15 +57,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3dViewer.aspx" />
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Images\IMG_1948.jpg" />
+    <Content Include="Images\IMG_1949.jpg" />
+    <Content Include="Images\IMG_1950.jpg" />
     <Content Include="Imageviewer.aspx" />
+    <Content Include="IMG_1949.jpg" />
     <Content Include="InitialFrontal.aspx" />
     <Content Include="MapCreator.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="3dViewer.aspx.cs">
+      <DependentUpon>3dViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3dViewer.aspx.designer.cs">
+      <DependentUpon>3dViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\AppContext.cs" />
     <Compile Include="Imageviewer.aspx.cs">
       <DependentUpon>Imageviewer.aspx</DependentUpon>
@@ -89,6 +101,11 @@
       <DependentUpon>MapCreator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
@@ -105,7 +122,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Images\J100\" />
+    <Folder Include="Images\J100\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
