@@ -66,7 +66,7 @@ namespace SE2014Project
                   myVal += "From where you are standing, Go " +   g.DirectionString + " and you will see: <br></br><img src=\"" + g.ImagePath + "\"> <br></br>";
                   if (g == assemPath.Last())
                   {
-                      myVal += "You have reached " + g.DestinationVertex.VertexID;
+                      myVal += "You have reached " + g.DestinationVertex.VertexID + " look at the graph to the path: <br></br><a href= \"" + "Imageviewer.aspx" + "\"> Map Image</a> <br></br>";
                   }
             }
 
