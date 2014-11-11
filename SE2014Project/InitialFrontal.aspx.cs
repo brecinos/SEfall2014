@@ -14,6 +14,11 @@ namespace SE2014Project
 {
     public partial class InitialFrontal : System.Web.UI.Page
     {
+
+
+        public string initialRoom { get; set; }
+        public string finalRoom { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
@@ -41,7 +46,8 @@ namespace SE2014Project
              var initialroom = this.TextBox1.Text.Trim(); 
              var finalroom = this.TextBox2.Text.Trim();
 
-
+             Session["initialRoom"] = initialroom;
+             Session["finalRoom"] = finalroom; 
 
              foreach (var v in vtx)
              {
@@ -82,6 +88,7 @@ namespace SE2014Project
             if (TextBox1.Text != "" && TextBox2.Text != "")
             {
                 ShowData();
+                this.ButtonStepList.Visible = true;
             }
             else {
 
@@ -89,6 +96,12 @@ namespace SE2014Project
             }
             
 
+        }
+
+        protected void ButtonStepList_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("StepList.aspx");
         }
 
     }

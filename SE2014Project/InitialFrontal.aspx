@@ -50,6 +50,11 @@
                     <td>
                         </td>
                </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="ButtonStepList" runat="server" Text="List all steps" Font-Bold="True" Visible="false" OnClick="ButtonStepList_Click" />
+                    </td>
+                </tr>
             </table>
 
 
@@ -73,6 +78,7 @@
 
         </asp:Table>
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+        
         <br />
         
     </form>
