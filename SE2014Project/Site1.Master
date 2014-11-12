@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="SE2014Project.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="topContent" class="p" >
+    <a href="InitialFrontal.aspx" class="link">Room Finder V 1.0 </a>
+    </div>
+ 
+
+    <div  class="body">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+        <div id="footerContent" class="footer">
+        <img  src="Images/IMG_1949.jpg" width="80px" height="80px" />
+ </div>
+
+    </form>
+</body>
+</html>
