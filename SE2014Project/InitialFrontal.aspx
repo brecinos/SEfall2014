@@ -1,27 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InitialFrontal.aspx.cs" Inherits="SE2014Project.InitialFrontal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="InitialFrontal.aspx.cs" Inherits="SE2014Project.InitialFrontal" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+</asp:Content>
 
-    <script type="text/javascript">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-        function check() {
-            if (document.getElementById('TextBox1').value == ""
-             || document.getElementById('TextBox1').value == undefined) {
-                alert("Please Enter a Name");
-                return false;
-            }
-            return true;
-        }
-
-        </script>
-
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
     <div>
     
     </div>
@@ -29,14 +15,14 @@
         <table>
             <tr>
                   <td>
-                      <asp:Label ID="Label2" runat="server" Text="Where you are?" BackColor="#0066FF" BorderColor="#000099" Font-Bold="True" ForeColor="White" Font-Names="Arial" Font-Size="Larger"></asp:Label>
+                      <asp:Label ID="Label2" runat="server" Text="Where you are?" class="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
                       </td>
                    <td>
                       <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
                   </td>
                    <td>
-                       <asp:Label ID="Label3" runat="server" Text="Where you want to go?" BackColor="#0066FF" BorderColor="#000099" Font-Bold="True" ForeColor="White" Font-Names="Arial" Font-Size="Larger"></asp:Label>
+                       <asp:Label ID="Label3" runat="server" Text="Where you want to go?"  BorderColor="#000099" Font-Bold="True" Font-Names="Arial" Font-Size="Larger"></asp:Label>
                        </td>
                     <td>
                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -81,6 +67,4 @@
         
         <br />
         
-    </form>
-</body>
-</html>
+</asp:Content>

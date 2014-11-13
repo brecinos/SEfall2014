@@ -7,24 +7,56 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="~/scripts/Site.css" rel="stylesheet" /> 
+   
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="topContent" class="p" >
+        
+        <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title"><a id="A1" runat="server" href="~/">
+                    <img src="~/Images/logo.png"  alt="Room Finder" height="100" width="200"/>
+                    
+&nbsp;</a></p>
+            </div>
+
+    <div id="topContent" class="float-right" >
     <a href="InitialFrontal.aspx" class="link">Room Finder V 1.0 </a>
     </div>
  
 
     <div  class="body">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
-        
-        </asp:ContentPlaceHolder>
     </div>
 
         <div id="footerContent" class="footer">
-        <img  src="Images/IMG_1949.jpg" width="80px" height="80px" />
- </div>
+        &nbsp;</div>
+
+                            <nav>
+                    <ul id="menu" aria-hidden="False" hidden="false">
+                        <li><a id="A2" runat="server" href="~/">Search Rooms</a></li>
+                        <li><a id="A3" runat="server" href="~/About"></a></li>
+                        <li><a id="A4" runat="server" href="~/Contact">About Us</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            </header>
+         <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> - Software Engineering Fall 2014</p>
+            </div>
+        </div>
+    </footer>
 
     </form>
 </body>

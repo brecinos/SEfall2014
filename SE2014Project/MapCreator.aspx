@@ -15,13 +15,17 @@
 <head runat="server">
     <title></title>
   
-    
+
 
 
 </head>
-<body>
-
+<body >
        
+
+    <form id="Form1" runat="server">
+    <asp:Button ID="ButtonZoomIn" runat="server" Text="+" OnClick="ButtonZoomIn_Click" />
+    <asp:Button ID="ButtonZoomOut" runat="server" Text="-" OnClick="ButtonZoomOut_Click" />
+ </form>
 
 </body>
 </html>
