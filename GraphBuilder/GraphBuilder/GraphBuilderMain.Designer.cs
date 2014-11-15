@@ -81,6 +81,7 @@
             this.btnShowMap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.saveXml = new System.Windows.Forms.SaveFileDialog();
+            this.btnAhhh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edgeImg2)).BeginInit();
@@ -639,11 +640,22 @@
             // 
             this.saveXml.DefaultExt = "xml";
             // 
+            // btnAhhh
+            // 
+            this.btnAhhh.Location = new System.Drawing.Point(1350, 513);
+            this.btnAhhh.Name = "btnAhhh";
+            this.btnAhhh.Size = new System.Drawing.Size(75, 23);
+            this.btnAhhh.TabIndex = 20;
+            this.btnAhhh.Text = "Help";
+            this.btnAhhh.UseVisualStyleBackColor = true;
+            this.btnAhhh.Click += new System.EventHandler(this.btnAhhh_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 565);
+            this.Controls.Add(this.btnAhhh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnShowMap);
             this.Controls.Add(this.cbMapFloor);
@@ -727,6 +739,7 @@
         private System.Windows.Forms.Button btnShowMap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveXml;
+        private System.Windows.Forms.Button btnAhhh;
     }
 }
 

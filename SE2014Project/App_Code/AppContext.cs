@@ -9,6 +9,10 @@ using PathGraph;
 
 namespace SE2014Project
 {
+    /// <summary>
+    /// This is a singleton that accesses the session and loads data that pertains to the app.
+    /// Any shared data throughout the app should go here.
+    /// </summary>
     public class AppContext
     {
         private Graph graph;

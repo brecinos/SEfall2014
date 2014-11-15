@@ -8,6 +8,9 @@ using PathGraph;
 
 namespace libSE2014
 {
+    /// <summary>
+    /// Vertex Attributes obtained from XML
+    /// </summary>
     class GraphLoaderVertex
     {
         public GraphLoaderVertex()
@@ -33,6 +36,9 @@ namespace libSE2014
         { get; set; }
     }
 
+    /// <summary>
+    /// Edge Attributes obtained from XML
+    /// </summary>
     class GraphLoaderEdge
     {
         public GraphLoaderEdge()
@@ -52,7 +58,11 @@ namespace libSE2014
         { get; set; }
     }
 
-        class GraphLoaderPoint
+
+    /// <summary>
+    /// Used to solve for the Vertex location
+    /// </summary>
+    class GraphLoaderPoint
     {
         public GraphLoaderPoint()
         {
@@ -65,7 +75,9 @@ namespace libSE2014
         { get; set; }
     }
 
-
+    /// <summary>
+    ///Loads Verticies and Edges from XML
+    /// </summary>
     public class GraphLoader
     {
         private List<Vertex> _listOfNodes;
@@ -78,6 +90,10 @@ namespace libSE2014
             _listOfNodes = new List<Vertex>();
         }
 
+        /// <summary>
+        /// Takes an angle from 0 to 360 and returns a Unit Vector
+        /// in the directuon of deg
+        /// </summary>
         private GraphLoaderPoint VectorFromAngle(double deg)
         {
             double deg2rad = deg * (Math.PI / 180.0);
@@ -88,6 +104,11 @@ namespace libSE2014
 
             return p;
         }
+
+        /// <summary>
+        /// Takes a Vertex from XML and returns its relative position
+        /// as a vector whose length is the Vertex length and direction is based on n = north etc
+        /// </summary>
         private GraphLoaderPoint GetRelativePosition(GraphLoaderVertex v)
         {
             GraphLoaderPoint location = new GraphLoaderPoint();
@@ -122,7 +143,6 @@ namespace libSE2014
                     break;
                 default:
                     break;
-
             }
 
             location.X = dirVec.X * v.Length;
@@ -131,6 +151,10 @@ namespace libSE2014
             return location;
         }
 
+        /// <summary>
+        /// O(n) iterates the verticies from XML to try to find a vertex by its name
+        /// returns null on failure
+        /// </summary>
         private GraphLoaderVertex GetGraphVertex(List<GraphLoaderVertex> verts, string name)
         {
             foreach (GraphLoaderVertex v in verts)
@@ -144,6 +168,10 @@ namespace libSE2014
             return null;
         }
 
+        /// <summary>
+        /// O(n) iterates the graph verticies to try to find a vertex by its name
+        /// returns null on failure
+        /// </summary>
         private Vertex GetVertex(string name)
         {
             foreach (Vertex v in _listOfNodes)
@@ -157,6 +185,9 @@ namespace libSE2014
             return null;
         }
 
+        /// <summary>
+        /// Obtains the absolute position of a vertex
+        /// </summary>
         private GraphLoaderPoint GetAbsPosition(GraphLoaderVertex v, List<GraphLoaderVertex> verts)
         {
             GraphLoaderPoint absLocation = GetRelativePosition(v);
@@ -167,12 +198,15 @@ namespace libSE2014
             }
            GraphLoaderVertex parent = v;
 
+            //find position by recursivly adding parent relative positions until the root node is reached
             while (GetGraphVertex(verts,parent.Parent) != null)
             {
                 parent = GetGraphVertex(verts, parent.Parent);
 
                 GraphLoaderPoint parentPos = GetRelativePosition(parent);
 
+                //add the parent's relative position
+                //the absolute position is a vertex's relative position + the sum of the parent positions until root (0,0)
                 absLocation.X += parentPos.X;
                 absLocation.Y += parentPos.Y;
             }
@@ -180,11 +214,17 @@ namespace libSE2014
             return absLocation;
         }
 
+        /// <summary>
+        /// Takes in the XML verticies and edges, gets absolute positions
+        /// from this, the graph verticies and edges are generated and stored
+        /// returns true on success
+        /// </summary>
         private bool generateVertsAndEdges(List<GraphLoaderVertex> verts, List<GraphLoaderEdge> edges)
         {
             _listOfNodes.Clear();
             _listOfEdges.Clear();
 
+            //find the vertex's absolute position, set the type, and add it
             foreach (var vert in verts)
             {
                 GraphLoaderPoint p = GetAbsPosition(vert,verts);
@@ -195,6 +235,8 @@ namespace libSE2014
                 _listOfNodes.Add(v);
             }
 
+            //associate the verticies, and the front/back image locations
+            //then add the edge with a cost of the 2D distance between the 2 verticies
             foreach (var edge in edges)
             {
                 Vertex v1 = GetVertex(edge.Vert1);
@@ -210,9 +252,15 @@ namespace libSE2014
             return true;
         }
 
+        /// <summary>
+        /// Loads the graph edges and verticies from XML
+        /// Fills the Edge and Vertex arrays
+        /// </summary>
         public bool load(string pathxml)
         {
-            string line = "";
+            string line = ""; 
+
+            //read the entire document in and parse it
             using (StreamReader sr = new StreamReader(pathxml))
             {
                 line = sr.ReadToEnd();
@@ -222,18 +270,22 @@ namespace libSE2014
             if (doc == null)
                 return false;
 
+            //first, go into the root layout element
             IEnumerable<XElement> elems =
             doc.Element("layout").Elements();
 
+            //access the verticies element
             IEnumerable<XElement> verts =
                 elems.Where( o => o.Name == "verticies").Elements();
 
+            //access the edges element
             IEnumerable<XElement> edges =
             elems.Where(o => o.Name == "edges").Elements();
 
             List<GraphLoaderVertex> glVerts = new List<GraphLoaderVertex>();
             List<GraphLoaderEdge> glEdges = new List<GraphLoaderEdge>();
 
+            //parse each attribute and make objects
             foreach (var v in verts)
             {
                 GraphLoaderVertex vtx = new GraphLoaderVertex();
@@ -247,6 +299,7 @@ namespace libSE2014
                 glVerts.Add(vtx);
             }
 
+            //parse each attribute and make objects
             foreach (var e in edges)
             {
                 GraphLoaderEdge edge = new GraphLoaderEdge();

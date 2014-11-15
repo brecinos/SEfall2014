@@ -18,7 +18,6 @@ namespace SE2014Project
         public int scale { get; set; }
     }
 
-
     public partial class Imageviewer : System.Web.UI.Page
     {
         private int zoomFactor = 20;
@@ -30,10 +29,6 @@ namespace SE2014Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           // getData();
-
-            //getSomething();
-
             if (!IsPostBack)
             {
                 AppContext.Instance.MapWidth = mapWidth;

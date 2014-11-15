@@ -13,6 +13,10 @@ using System.Xml.Linq;
 namespace GraphBuilder
 {
 
+    /// <summary>
+    /// This is a companion tool for the Room Finder
+    /// This tool is not very documented and mostly meant for internal use
+    /// </summary>
     public partial class MainFrm : Form
     {
         private Bitmap buffer;
@@ -609,6 +613,17 @@ namespace GraphBuilder
         private void cbMapFloor_SelectedIndexChanged(object sender, EventArgs e)
         {
             PaintMapRectangle();
+        }
+
+        private void btnAhhh_Click(object sender, EventArgs e)
+        {
+            String msg = "This is a companion app meant for internal use. Its documentation is limited.\n";
+            msg += "Start by creating a new vertex. Next, select it in the vertex listbox.\n";
+            msg += "Set the parameters such as name, length, direction, type...\n";
+            msg += "Hit the Update Button for the vertex.";
+            msg += "The same idea applies for edges. For images, make sure you put this exe in the same directory as an Images folder with all your images.";
+
+            MessageBox.Show(msg, "Very Basic Usage Information");
         }
 
  }

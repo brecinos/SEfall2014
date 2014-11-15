@@ -14,8 +14,6 @@ namespace SE2014Project
 {
     public partial class InitialFrontal : System.Web.UI.Page
     {
-
-
         public string initialRoom { get; set; }
         public string finalRoom { get; set; }
 
@@ -23,13 +21,8 @@ namespace SE2014Project
         {
             if (!IsPostBack) {
                 this.Label1.Visible = false;
-                //fillDropDowns();
-                //ShowData();
             }
         }
-
-
-       
 
         protected void ShowData() {
             this.Label1.Visible = true;
