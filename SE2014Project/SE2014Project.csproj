@@ -61,6 +61,7 @@
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Default.aspx" />
     <Content Include="Images\IMG_1948.jpg" />
     <Content Include="Images\IMG_1949.jpg" />
     <Content Include="Images\IMG_1950.jpg" />
@@ -97,6 +98,13 @@
       <DependentUpon>3dViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\AppContext.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Imageviewer.aspx.cs">
       <DependentUpon>Imageviewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
