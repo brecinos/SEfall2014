@@ -60,7 +60,7 @@ namespace SE2014Project
              }
              else
              {
-                 this.OutputLiteral.Text = "<h2>Starting point or end point were not found.</h2>";
+                 this.OutputLiteral.Text = "<h2>We're not sure where that is. Try somewhere else.</h2>";
              }
         
         }

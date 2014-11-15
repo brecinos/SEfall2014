@@ -12,6 +12,6 @@
     <div>
         <h3> Here's the list of steps to take from your current room to your destination </h3>
     </div>
-        <asp:GridView ID="GridView1" runat="server" AlternatingRowStyle-BackColor="#99ccff" BorderColor="#00ffcc" HeaderStyle-BackColor="#33ccff"></asp:GridView>
+        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound" AlternatingRowStyle-BackColor="#99ccff" BorderColor="#00ffcc" HeaderStyle-BackColor="#33ccff"></asp:GridView>
 
     </asp:Content>

@@ -22,58 +22,41 @@ namespace SE2014Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
                 ShowData();
-        
-
         }
 
         protected void ShowData()
         {
             //this.Label1.Visible = true;
 
-            Graph gr = new Graph();
+            Graph   gr = AppContext.Instance.getGraph();
 
-            GraphLoader gl = new GraphLoader();
-            String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
-            bool success = gl.load(file);
+             var path = gr.RetrieveShortestPath(gr.FindVertexByID(AppContext.Instance.InitialRoom), gr.FindVertexByID(AppContext.Instance.DestinationRoom));
 
-            var vtx = gl.GetVerticies();
-            var edges = gl.GetEdges();
+             if (path != null)
+             {
+                 var assembler = new GraphPathAssembler(path, gr.Edges, @"\Images");
+                 var assemPath = assembler.GenerateOptimizedPath();
 
-            var initialroom = Session["initialRoom"].ToString();
-            var finalroom = Session["finalRoom"].ToString();  
+                 //creating the step list for the grid
+                 List<ShowRooms> graphStepList = new List<ShowRooms>();
+                 var countStep = 0;
+                 foreach (var g in assemPath)
+                 {
+                     countStep = countStep + 1;
+                     ShowRooms sr = new ShowRooms { Step_number = countStep, Description = g.Vertex.VertexID, Turn = g.DirectionString };
+                     graphStepList.Add(sr);
+                 }
 
+                 GridView1.DataSource = graphStepList;
+                 GridView1.DataBind();
+             }
+        }
 
-            foreach (var v in vtx)
-            {
-                gr.AddVertex(v);
-            }
-
-            foreach (var e in edges)
-            {
-                gr.AddEdge(e);
-            }
-
-            var path = gr.RetrieveShortestPath(gr.FindVertexByID(initialroom), gr.FindVertexByID(finalroom));
-
-
-            var assembler = new GraphPathAssembler(path, edges, @"\Images");
-            var assemPath = assembler.GenerateOptimizedPath();
-
-            //creating the step list for the grid
-            List<ShowRooms> graphStepList = new List<ShowRooms>();
-            var countStep = 0;
-            foreach (var g in assemPath)
-            {
-                countStep = countStep + 1;
-                ShowRooms sr = new ShowRooms { Step_number = countStep,  Description = g.Vertex.VertexID, Turn = g.DirectionString };
-                graphStepList.Add(sr);
-            }
-           
-            GridView1.DataSource = graphStepList;
-            GridView1.DataBind();
-
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+               if(e.Row.RowType == DataControlRowType.Header)
+                    e.Row.Cells[0].Text = "#";
         }
 
     }
