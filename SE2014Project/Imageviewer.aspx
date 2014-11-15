@@ -1,35 +1,36 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Imageviewer.aspx.cs" Inherits="SE2014Project.Imageviewer" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="Imageviewer.aspx.cs" Inherits="SE2014Project.Imageviewer" %>
 
 
-</head>
-<body  style="background-color: #e2e2e2" >
-    <form id="form1" runat="server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+</asp:Content>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
     <div>
-    
-    </div>
-        
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+              <asp:Button ID="ButtonZoomIn" runat="server" Text="+" OnClick="ButtonZoomIn_Click" />
+    <asp:Button ID="ButtonZoomOut" runat="server" Text="-" OnClick="ButtonZoomOut_Click" />
+
+   <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ViewStateMode="Enabled">
+       <ContentTemplate>
             <h1>Here is the map to your classroom:</h1>
 
-        <input type="button" value ="-" onclick="zoom(0.9)"/>
-        <input type="button" value ="+" onclick="zoom(1.1)"/>
-        
-
-        <h1>Here is the path you have to take!</h1>
-
         <div id="thediv">
-       <img src="MapCreator.aspx" width="1000px" height="1000px" />
-     <asp:Button ID="ButtonZoomIn" runat="server" Text="+" OnClick="ButtonZoomIn_Click" />
-    <asp:Button ID="ButtonZoomOut" runat="server" Text="-" />
+            <asp:Image ID="imgMap" runat="server" />
      </div>
+       </ContentTemplate>
 
-    </form>
-    
-  
-</body>
-</html>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="ButtonZoomIn" EventName="Click" />
+            <asp:AsyncPostBackTrigger ControlID="ButtonZoomOut" EventName="Click" />
+       </Triggers>
+
+        </asp:UpdatePanel>
+    </div>
+ </asp:Content>

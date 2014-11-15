@@ -63,5 +63,23 @@ namespace SE2014Project
             get;
             set;
         }
+
+        public int MapZoomFactor
+        {
+            get;
+            set;
+        }
+
+        public int MapWidth
+        {
+            get;
+            set;
+        }
+
+        public int MapHeight
+        {
+            get;
+            set;
+        }
     }
 }

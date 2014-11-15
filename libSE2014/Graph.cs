@@ -289,9 +289,6 @@ namespace PathGraph
             _listOfNodes = new List<Vertex>();
 
             _sourceNode = null; //_targetNode = null;
-
-            //_totalCost = -1;
-            //_optimalTraversal = new List<Vector2D>();
         }
 
         /// <summary>
