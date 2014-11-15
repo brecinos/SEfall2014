@@ -15,7 +15,7 @@
         <table>
             <tr>
                   <td>
-                      <asp:Label ID="Label2" runat="server" Text="Where you are?" class="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
+                      <asp:Label ID="Label2" runat="server" Text="Where you are?" CSSClass="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
                       </td>
                    <td>
                       <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
