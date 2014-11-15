@@ -322,7 +322,7 @@ namespace PathGraph
         {
             for (int i = 0; i < _listOfNodes.Count; i++)
             {
-                if (_listOfNodes[i].VertexID == id)
+                if (_listOfNodes[i].VertexID.ToLower() == id.ToLower())
                 {
                     return _listOfNodes[i];
                 }
@@ -421,7 +421,6 @@ namespace PathGraph
             CalculateShortestPath();
             return RetrieveShortestPath(targetNode);
         }
-
 
         private List<Edge> GetConnectedEdges(Vertex startNode)
         {
