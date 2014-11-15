@@ -57,18 +57,45 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3dViewer.aspx" />
     <Content Include="App_Data\bishops.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\IMG_1948.jpg" />
     <Content Include="Images\IMG_1949.jpg" />
     <Content Include="Images\IMG_1950.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
     <Content Include="Imageviewer.aspx" />
     <Content Include="InitialFrontal.aspx" />
     <Content Include="MapCreator.aspx" />
+    <Content Include="scripts\jquery-1.8.2.js" />
+    <Content Include="scripts\jquery-1.8.2.min.js" />
+    <Content Include="scripts\jquery-ui-1.8.24.js" />
+    <Content Include="scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\Site.css" />
+    <Content Include="scripts\_references.js" />
+    <Content Include="StepList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="3dViewer.aspx.cs">
+      <DependentUpon>3dViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3dViewer.aspx.designer.cs">
+      <DependentUpon>3dViewer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\AppContext.cs" />
     <Compile Include="Imageviewer.aspx.cs">
       <DependentUpon>Imageviewer.aspx</DependentUpon>
@@ -97,8 +124,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StepList.aspx.cs">
+      <DependentUpon>StepList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StepList.aspx.designer.cs">
+      <DependentUpon>StepList.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Site1.Master" />
+    <None Include="scripts\jquery-1.8.2.intellisense.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\J100\" />
+    <Folder Include="scripts\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
