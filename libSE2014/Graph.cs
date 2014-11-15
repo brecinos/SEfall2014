@@ -414,6 +414,9 @@ namespace PathGraph
 
         public List<Vertex> RetrieveShortestPath(Vertex start, Vertex targetNode)
         {
+            if (start == null || targetNode == null)
+                return null;
+
             SourceVertex = start;
             CalculateShortestPath();
             return RetrieveShortestPath(targetNode);

@@ -47,7 +47,7 @@
        
 
 
-        <asp:Table ID="Table1" runat="server" ForeColor="Red">
+        <asp:Table ID="Table1" runat="server" ForeColor="Red" Visible="False">
             
             <asp:TableRow>
             <asp:TableCell>
@@ -63,7 +63,7 @@
             </asp:TableRow>
 
         </asp:Table>
-        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+        <asp:Literal ID="OutputLiteral" runat="server"></asp:Literal>
         
         <br />
         

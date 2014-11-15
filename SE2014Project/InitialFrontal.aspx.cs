@@ -34,68 +34,56 @@ namespace SE2014Project
         protected void ShowData() {
             this.Label1.Visible = true;
 
-             Graph   gr = new Graph();
+             Graph   gr = AppContext.Instance.getGraph();
 
-             GraphLoader gl = new GraphLoader();
-             String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
-             bool success = gl.load(file);
+             var path = gr.RetrieveShortestPath(gr.FindVertexByID(AppContext.Instance.InitialRoom), gr.FindVertexByID(AppContext.Instance.DestinationRoom));
 
-             var vtx = gl.GetVerticies();
-             var edges = gl.GetEdges();
-
-             var initialroom = this.TextBox1.Text.Trim(); 
-             var finalroom = this.TextBox2.Text.Trim();
-
-             Session["initialRoom"] = initialroom;
-             Session["finalRoom"] = finalroom; 
-
-             foreach (var v in vtx)
+             if (path != null)
              {
-                 gr.AddVertex(v);
-             }
+                 OnPathFound();
 
-             foreach (var e in edges)
+                 var assembler = new GraphPathAssembler(path, gr.Edges, @"\Images");
+                 var assemPath = assembler.GenerateOptimizedPath();
+
+                 string myVal = "";
+
+                 foreach (var g in assemPath)
+                 {
+                     myVal += "From where you are standing, Go " + g.DirectionString + " and you will see: <br></br><img src=\"" + g.ImagePath + "\"> <br></br>";
+                     if (g == assemPath.Last())
+                     {
+                         myVal += "You have reached " + g.DestinationVertex.VertexID + " look at the graph to the path: <br></br><a href= \"" + "Imageviewer.aspx" + "\"> Map Image</a> <br></br>";
+                     }
+                 }
+
+                 this.OutputLiteral.Text = myVal;
+             }
+             else
              {
-                 gr.AddEdge(e);
+                 this.OutputLiteral.Text = "<h2>Starting point or end point were not found.</h2>";
              }
-
-             var path = gr.RetrieveShortestPath(gr.FindVertexByID(initialroom), gr.FindVertexByID(finalroom));
-            
-
-            var assembler = new GraphPathAssembler(path, edges, @"\Images");
-            var assemPath = assembler.GenerateOptimizedPath();
-
-            string myVal ="";
-
-            foreach (var g in assemPath)
-            {
-                  myVal += "From where you are standing, Go " +   g.DirectionString + " and you will see: <br></br><img src=\"" + g.ImagePath + "\"> <br></br>";
-                  if (g == assemPath.Last())
-                  {
-                      myVal += "You have reached " + g.DestinationVertex.VertexID + " look at the graph to the path: <br></br><a href= \"" + "Imageviewer.aspx" + "\"> Map Image</a> <br></br>";
-                  }
-            }
-
-
-
-            this.Literal1.Text = myVal;
         
+        }
+
+        protected void SetStartAndEnd()
+        {
+            var initialroom = this.TextBox1.Text.Trim();
+            var finalroom = this.TextBox2.Text.Trim();
+
+            AppContext.Instance.InitialRoom = initialroom;
+            AppContext.Instance.DestinationRoom = finalroom; 
+        }
+
+        protected void OnPathFound()
+        {
+            this.ButtonStepList.Visible = true;  
         }
 
         protected void ButtonGo_Click(object sender, EventArgs e)
         {
 
-            if (TextBox1.Text != "" && TextBox2.Text != "")
-            {
-                ShowData();
-                this.ButtonStepList.Visible = true;
-            }
-            else {
-
-                this.Literal1.Text = "no valid names for rooms";
-            }
-            
-
+                SetStartAndEnd();
+                ShowData();          
         }
 
         protected void ButtonStepList_Click(object sender, EventArgs e)

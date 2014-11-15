@@ -51,5 +51,17 @@ namespace SE2014Project
         {
             return graph;
         }
+
+        public String InitialRoom
+        {
+            get;
+            set;
+        }
+
+        public String DestinationRoom
+        {
+            get;
+            set;
+        }
     }
 }
