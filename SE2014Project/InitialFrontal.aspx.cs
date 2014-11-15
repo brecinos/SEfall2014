@@ -38,7 +38,7 @@ namespace SE2014Project
 
              var path = gr.RetrieveShortestPath(gr.FindVertexByID(AppContext.Instance.InitialRoom), gr.FindVertexByID(AppContext.Instance.DestinationRoom));
 
-             if (path != null)
+             if (path != null && path.Count >= 2)
              {
                  OnPathFound();
 
@@ -57,6 +57,10 @@ namespace SE2014Project
                  }
 
                  this.OutputLiteral.Text = myVal;
+             }
+             else if (path != null)
+             {
+                 this.OutputLiteral.Text = "<h2>Turn around... you made it!</h2>";
              }
              else
              {
