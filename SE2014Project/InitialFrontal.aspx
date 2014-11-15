@@ -15,14 +15,14 @@
         <table>
             <tr>
                   <td>
-                      <asp:Label ID="Label2" runat="server" Text="Where you are?" CSSClass="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
+                      <asp:Label ID="Label2" runat="server" Text="Where are you?" CSSClass="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
                       </td>
                    <td>
                       <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
                   </td>
                    <td>
-                       <asp:Label ID="Label3" runat="server" Text="Where you want to go?"  BorderColor="#000099" Font-Bold="True" Font-Names="Arial" Font-Size="Larger"></asp:Label>
+                       <asp:Label ID="Label3" runat="server" Text="Where do you want to go?"  BorderColor="#000099" Font-Bold="True" Font-Names="Arial" Font-Size="Larger"></asp:Label>
                        </td>
                     <td>
                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
