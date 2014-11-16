@@ -17,25 +17,43 @@
                   <td>
                       <asp:Label ID="Label2" runat="server" Text="Where are you?" CSSClass="two" BorderColor="#000099" Font-Bold="True"  Font-Names="Arial" Font-Size="Larger"></asp:Label>
                       </td>
-                   <td>
-                      <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                 
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server" ToolTip="like: 'J9' " ></asp:TextBox>
+                </td>
 
-                  </td>
                    <td>
                        <asp:Label ID="Label3" runat="server" Text="Where do you want to go?"  BorderColor="#000099" Font-Bold="True" Font-Names="Arial" Font-Size="Larger"></asp:Label>
                        </td>
-                    <td>
-                       <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                    
-                   </td>
+                  <td>
+                      <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
+
+                  </td>
 
                    <td>
                       <asp:Button ID="ButtonGo" runat="server" Text="GO!" OnClick="ButtonGo_Click" OnClientClick="check()" />
                       </td>
                 
                     <td>
+
                         </td>
                </tr>
+            <tr> 
+                  <td>
+                      <asp:Label ID="LabelErrorInput" runat="server" BackColor="#66FF99"></asp:Label>
+                  </td>
+                <td> 
+                 
+                  
+                 </td> 
+              <td>  </td> 
+                  <td>
+                       
+                 
+                   </td>
+
+
+            </tr>
             <tr>
                 <td>
                     <asp:Button ID="ButtonStepList" runat="server" Text="List all steps" Font-Bold="True" Visible="false" OnClick="ButtonStepList_Click" />

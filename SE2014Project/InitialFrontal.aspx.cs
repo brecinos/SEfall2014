@@ -45,7 +45,7 @@ namespace SE2014Project
                      myVal += "From where you are standing, Go " + g.DirectionString + " and you will see: <br></br><img src=\"" + g.ImagePath + "\"> <br></br>";
                      if (g == assemPath.Last())
                      {
-                         myVal += "You have reached " + g.DestinationVertex.VertexID + " look at the graph to the path: <br></br><a href= \"" + "Imageviewer.aspx" + "\"> Map Image</a> <br></br>";
+                         myVal += "You have reached " + g.DestinationVertex.VertexID + " look at the graph to the path: <br></br><a href= \"" + "Imageviewer.aspx" + "\"><strong> Map Image</strong></a> <br></br>";
                      }
                  }
 
@@ -78,9 +78,18 @@ namespace SE2014Project
 
         protected void ButtonGo_Click(object sender, EventArgs e)
         {
-
+            if (validate_Input() != false)
+            {
+                LabelErrorInput.Text = "";
                 SetStartAndEnd();
-                ShowData();          
+                ShowData();
+                LabelErrorInput.Visible = false;
+            }
+            else
+            {
+                LabelErrorInput.Visible = true;
+                LabelErrorInput.Text = "Type again your rooms(j9,valid). Not a valid entry format.";
+            }
         }
 
         protected void ButtonStepList_Click(object sender, EventArgs e)
@@ -88,6 +97,34 @@ namespace SE2014Project
 
             Response.Redirect("StepList.aspx");
         }
+
+
+        /// <summary>
+        /// validate input to ensure the format is letters with numbers
+        /// </summary>
+        private bool validate_Input()
+        {
+            bool returnOk = false;
+            var val1 = TextBox1.Text;
+            var val2 = TextBox2.Text;
+            bool valueNumeric = System.Text.RegularExpressions.Regex.IsMatch(val1, @"\d");
+            bool valueNumeric2 = System.Text.RegularExpressions.Regex.IsMatch(val1, @"\d");
+
+            if (valueNumeric != false && valueNumeric2 !=false) {
+
+                LabelErrorInput.Text = "";
+                returnOk = true;
+            }
+
+            return returnOk;
+
+        }
+
+      
+      
+     
+
+       
 
     }
 }
