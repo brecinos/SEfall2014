@@ -10,40 +10,27 @@
     
         </div>
          <table>
-             <tr>
-                 <td>
-                     <asp:DropDownList ID="DropDownBuilding" runat ="server">
-
-                     </asp:DropDownList>
-                 </td>
-                 <td >
-                     <asp:DropDownList ID="DropDownRoom" runat="server" >
-                         
-                     </asp:DropDownList>
-                 </td>
-                 </tr>
-
-
+            
             <tr>
                 <td>
-                    <asp:Button ID="Button2" runat="server" Text="Previous" BackColor="Black" ForeColor="#FFFFCC" Height="160px"  Width="70px"/>
+                    <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" BackColor="Black" ForeColor="#FFFFCC" Height="160px"  Width="70px" OnClick="ButtonPrevious_Click"/>
                     
                 </td>
                 <td>
                     
-                    <asp:Image ID="Image1" runat="server" Height="57px"  Width="49px"   />
+                    <asp:Image ID="Image1" runat="server" Height="487px"  Width="749px"   />
                 </td>
-                   <td>
-                    <asp:Button ID="Button1" runat="server" Text="Next" BackColor="Black" ForeColor="#FFFFCC" Height="160px" Width="69px" OnClick="Button1_Click" />
+                   <td style="">
+                    <asp:Button ID="ButtonNext" runat="server" Text="Next" BackColor="Black" ForeColor="#FFFFCC" Height="160px" Width="69px" OnClick="ButtonNext_Click" />
                 </td>
             </tr>
             <tr>
                 <td> </td>
                 <td>
-                        <asp:ImageMap ID="ImageMap1" runat="server" Height="487px"  Width="749px" ></asp:ImageMap>
+                        <asp:ImageMap ID="ImageMap1" runat="server" Height="48px"  Width="49px" ></asp:ImageMap>
                 </td>
                 <td> </td>
             </tr>
             </table>
-
+    <asp:HiddenField ID="HiddenField1" runat="server" />
 </asp:Content>

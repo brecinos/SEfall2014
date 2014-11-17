@@ -14,128 +14,63 @@ namespace SE2014Project
     public partial class _3dViewer : System.Web.UI.Page
     {
 
-
+        public int FirstIndex { get; set; }
+        public int currentIndex { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             //set the image on the initial load
-           
-
             if (!IsPostBack)
-                setImage();
-                //loadImage(); 
-         
-        }
-
-        private void FillDropDowns() { 
-        
-            GraphLoader graphicloader =  new GraphLoader();
-
-            String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
-            bool success = graphicloader.load(file);
-
-          //  this.DropDownBuilding.DataSource = 
+                ShowData(0);
         
         }
 
-
-        private void setImage()
+        protected void ShowData(int imageIndex)
         {
-            string imagepath = HostingEnvironment.MapPath(@"/Images/");
-            //var pathFromXmlImage =  @"~\IMG_1949.jpg";
-            string initialImageString = "IMG_";
-            string numberString = "1949";
-            string extension = ".jpg";
+    
+            Graph gr = AppContext.Instance.getGraph();
 
-            this.Image1.ImageUrl = imagepath + initialImageString + numberString + extension;//@"/App_Data/Images/IMG_1948.jpg";//imagepath+initialImageString+numberString+extension;
+            var path = gr.RetrieveShortestPath(gr.FindVertexByID(AppContext.Instance.InitialRoom), gr.FindVertexByID(AppContext.Instance.DestinationRoom));
 
-            // adding something dynamically
-            //System.Web.UI.WebControls.Image img = new System.Web.UI.WebControls.Image();
-            //img.ImageUrl = imagepath + initialImageString + numberString + extension;
+            if (path != null && path.Count >= 2)
+            {
+                
+                var assembler = new GraphPathAssembler(path, gr.Edges, @"\Images");
+                var assemPath = assembler.GenerateOptimizedPath();
 
-            //PanelImage.Controls.Add(img);
-            //DropDownBuilding.DataSource =  DropDownBuilding
-                //DropDownBuilding.DataSource = 
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            // var filepath = Image1.ImageUrl;
-           // var myval = int.Parse((Image1.ImageUrl).Substring(5,4));
-           // this.Image1.ImageUrl = //imagepath + initialImageString + numberString + extension;
-        }
+                List<String> listImages = new List<String>();
 
 
-
-
-        /*
-        private void  loadImage(){
-        
-        String file = HostingEnvironment.MapPath(@"/App_Data/bishops.xml");
-        string imagepath = HostingEnvironment.MapPath(@"/App_Data/Images/");
-
-        Graph gr = new Graph();
-
-        GraphLoader gl = new GraphLoader();
-        
-        bool success = gl.load(file);
-
-        var vtx = gl.GetVerticies();
-        var edges = gl.GetEdges();
-
-        foreach (var v in vtx)
-        {
-            gr.AddVertex(v);
-        }
-
-        foreach (var e in edges)
-        {
-            gr.AddEdge(e);
-            //string imagepath = @"/App_Data/Images/";
-            string imagepath2 = @"~/App_Data/Images/";
-            //ImageUrl="~/App_Data/Images/IMG_1948.jpg"
-
-            string value2 = string.Format("{0}{1}", imagepath2, e.FirstImage);//  ("img1").Value);
-            this.Image1.ImageUrl = value2;
-            this.ImageMap1.ImageUrl = value2;
-        }
-
-        var path = gr.RetrieveShortestPath(gr.FindVertexByID("j113"), gr.FindVertexByID("j118"));
-
-        string myVal = "";
-
-        foreach (Vertex v in path)
-        {
-            
-            //string imagepath = @"/App_Data/Images/";
-            string imagepath2 = @"~/App_Data/Images/";
-            //ImageUrl="~/App_Data/Images/IMG_1948.jpg"
-
-            string value2 = string.Format("{0}{1}", imagepath2, v.Attribute("img1").Value);
-            //this.Image1.ImageUrl = value2;
-            this.ImageMap1.ImageUrl = value2;
-        }
-
-
-                foreach (var ed in edges)
+                foreach (var g in assemPath)
                 {
+                    listImages.Add(g.ImagePath);
 
-                    
+                   // solving the image Index inference
+                    FirstIndex = imageIndex == 0 ? 0 : imageIndex;    
                 }
+                this.Image1.ImageUrl = listImages[imageIndex];
+                currentIndex = imageIndex;
+            }
+            HiddenField1.Value = currentIndex.ToString();
 
-                //this.verticies = glVerts;
-                //this.edges = glEdges;
-    }*/
+        }
 
-        //protected void Image1_PreRender(object sender, EventArgs e)
-        //{
-          //  loadImage();
-        //}
-        
-        //end of load image
-        
+
+        protected void ButtonNext_Click(object sender, EventArgs e)
+        {
+            var myValNow = int.Parse(HiddenField1.Value);
+            var newIndex = myValNow >= 0 ? myValNow + 1 : 0;
+            ShowData(newIndex);
+        }
+
+        protected void ButtonPrevious_Click(object sender, EventArgs e)
+        {
+            var myValNow = int.Parse(HiddenField1.Value);
+            var newIndex = myValNow >= 1 ? myValNow - 1 : myValNow;
+            ShowData(newIndex);
+        }
+
 
 
     }
