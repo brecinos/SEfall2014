@@ -73,7 +73,8 @@ namespace SE2014Project
 
         protected void OnPathFound()
         {
-            this.ButtonStepList.Visible = true;  
+            this.ButtonStepList.Visible = true;
+            this.ButtonImageCatalog.Visible = true;  
         }
 
         protected void ButtonGo_Click(object sender, EventArgs e)

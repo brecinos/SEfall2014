@@ -69,10 +69,10 @@ namespace SE2014Project
                 
             }
             HiddenField1.Value = currentIndex.ToString();
-            if (currentIndex < 0)
-                ButtonPrevious.Visible = false;
+            if (imageIndex == 0)
+                ButtonPrevious.Enabled = false;
             else
-                ButtonPrevious.Visible = true;
+                ButtonPrevious.Enabled = true;
                
         }
 

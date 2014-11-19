@@ -60,7 +60,7 @@
                     </td>
                 <td>
                     
-                    <asp:Button ID="ButtonImageCatalog" runat="server" Text="Image Flip View" Font-Bold="True" Visible="false" OnClick="ButtonImageCatalog_Click"  />
+                    <asp:Button ID="ButtonImageCatalog" runat="server" Text="Image Flip View" Font-Bold="True" Visible="False" OnClick="ButtonImageCatalog_Click"  />
 
                 </td>
                 

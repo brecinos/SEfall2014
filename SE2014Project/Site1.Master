@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="~/scripts/Site.css" rel="stylesheet" /> 
@@ -15,6 +16,7 @@
     <form id="form1" runat="server">
         
         <header>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title"><a id="A1" runat="server" href="~/">

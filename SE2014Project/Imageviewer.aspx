@@ -11,8 +11,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
 
               <asp:Button ID="ButtonZoomIn" runat="server" Text="+" OnClick="ButtonZoomIn_Click" />
     <asp:Button ID="ButtonZoomOut" runat="server" Text="-" OnClick="ButtonZoomOut_Click" />
