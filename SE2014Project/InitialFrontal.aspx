@@ -58,6 +58,12 @@
                 <td>
                     <asp:Button ID="ButtonStepList" runat="server" Text="List all steps" Font-Bold="True" Visible="false" OnClick="ButtonStepList_Click" />
                     </td>
+                <td>
+                    
+                    <asp:Button ID="ButtonImageCatalog" runat="server" Text="Image Flip View" Font-Bold="True" Visible="false" OnClick="ButtonImageCatalog_Click"  />
+
+                </td>
+                
                 </tr>
             </table>
 

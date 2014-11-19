@@ -84,11 +84,13 @@ namespace SE2014Project
                 SetStartAndEnd();
                 ShowData();
                 LabelErrorInput.Visible = false;
+                ButtonImageCatalog.Visible = true;
             }
             else
             {
                 LabelErrorInput.Visible = true;
                 LabelErrorInput.Text = "Type again your rooms(j9,valid). Not a valid entry format.";
+                ButtonImageCatalog.Visible = false;
             }
         }
 
@@ -120,9 +122,10 @@ namespace SE2014Project
 
         }
 
-      
-      
-     
+        protected void ButtonImageCatalog_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("3dviewer.aspx");
+        }
 
        
 

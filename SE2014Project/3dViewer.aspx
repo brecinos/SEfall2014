@@ -12,16 +12,16 @@
          <table>
             
             <tr>
-                <td>
-                    <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" BackColor="Black" ForeColor="#FFFFCC" Height="160px"  Width="70px" OnClick="ButtonPrevious_Click"/>
+                <td >
+                    <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" BackColor="Black" ForeColor="#FFFFCC" Height="442px"  Width="83px" OnClick="ButtonPrevious_Click"/>
                     
                 </td>
-                <td>
+                <td >
                     
                     <asp:Image ID="Image1" runat="server" Height="487px"  Width="749px"   />
                 </td>
-                   <td style="">
-                    <asp:Button ID="ButtonNext" runat="server" Text="Next" BackColor="Black" ForeColor="#FFFFCC" Height="160px" Width="69px" OnClick="ButtonNext_Click" />
+                   <td >
+                    <asp:Button ID="ButtonNext" runat="server" Text="Next" BackColor="Black" ForeColor="#FFFFCC" Height="438px" Width="69px" OnClick="ButtonNext_Click" />
                 </td>
             </tr>
             <tr>

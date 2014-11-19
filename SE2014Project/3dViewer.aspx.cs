@@ -41,19 +41,39 @@ namespace SE2014Project
 
                 List<String> listImages = new List<String>();
 
+                var secureIndex = imageIndex;
 
                 foreach (var g in assemPath)
                 {
                     listImages.Add(g.ImagePath);
 
-                   // solving the image Index inference
-                    FirstIndex = imageIndex == 0 ? 0 : imageIndex;    
+                    secureIndex = (imageIndex > listImages.Count - 1) ? imageIndex - 1 : imageIndex;
                 }
-                this.Image1.ImageUrl = listImages[imageIndex];
-                currentIndex = imageIndex;
+                // solving the image Index inference
+                FirstIndex = imageIndex == 0 ? 0 : (listImages.Count - listImages.Count - 1);
+                    
+
+                //verifying the index
+                if (secureIndex > 0)
+                {
+                    this.Image1.ImageUrl = listImages[secureIndex];
+                    currentIndex = secureIndex;
+                }
+                else
+                {
+                    this.Image1.ImageUrl = listImages[0];
+                    currentIndex = secureIndex;
+
+                }
+
+                
             }
             HiddenField1.Value = currentIndex.ToString();
-
+            if (currentIndex < 0)
+                ButtonPrevious.Visible = false;
+            else
+                ButtonPrevious.Visible = true;
+               
         }
 
 
@@ -69,6 +89,7 @@ namespace SE2014Project
             var myValNow = int.Parse(HiddenField1.Value);
             var newIndex = myValNow >= 1 ? myValNow - 1 : myValNow;
             ShowData(newIndex);
+            ButtonNext.Visible = true;
         }
 
 

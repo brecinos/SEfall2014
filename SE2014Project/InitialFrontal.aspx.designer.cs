@@ -76,6 +76,15 @@ namespace SE2014Project {
         protected global::System.Web.UI.WebControls.Button ButtonStepList;
         
         /// <summary>
+        /// ButtonImageCatalog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonImageCatalog;
+        
+        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
