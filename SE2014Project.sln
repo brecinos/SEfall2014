@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libSE2014", "libSE2014\libS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphBuilder", "GraphBuilder\GraphBuilder\GraphBuilder.csproj", "{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "RoomFinderModel", "RoomFinderModel\RoomFinderModel.modelproj", "{6B11AC61-2EDF-42EC-8E9A-5E634C0D1E9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D97603AE-7BB4-4AFC-8554-9B75D29F82DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B11AC61-2EDF-42EC-8E9A-5E634C0D1E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B11AC61-2EDF-42EC-8E9A-5E634C0D1E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B11AC61-2EDF-42EC-8E9A-5E634C0D1E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B11AC61-2EDF-42EC-8E9A-5E634C0D1E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
