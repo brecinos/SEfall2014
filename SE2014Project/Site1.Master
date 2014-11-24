@@ -57,6 +57,9 @@
             <div class="float-left">
                 <p>&copy; <%: DateTime.Now.Year %> - Software Engineering Fall 2014</p>
             </div>
+            
+                    <asp:Image ID="Image1" runat="server" Height="45px" ImageUrl="~/Images/RoomFinderFinalLogo.png" Width="151px" />
+            </a>
         </div>
     </footer>
 
