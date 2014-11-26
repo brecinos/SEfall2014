@@ -70,9 +70,15 @@ namespace SE2014Project
             }
             HiddenField1.Value = currentIndex.ToString();
             if (imageIndex == 0)
+            {
                 ButtonPrevious.Enabled = false;
+                this.LabelShowMessage.Text = "This is initial location";
+            }
             else
+            {
                 ButtonPrevious.Enabled = true;
+                this.LabelShowMessage.Text = "This is last location";
+            }
                
         }
 
@@ -91,6 +97,7 @@ namespace SE2014Project
             ShowData(newIndex);
             ButtonNext.Visible = true;
         }
+
 
 
 

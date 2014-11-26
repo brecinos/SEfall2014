@@ -13,7 +13,7 @@
             
             <tr>
                 <td >
-                    <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" Height="442px"  Width="83px" OnClick="ButtonPrevious_Click"/>
+                    <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" Height="438px" Width="69px" OnClick="ButtonPrevious_Click"/>
                     
                 </td>
                 <td >
@@ -27,7 +27,7 @@
             <tr>
                 <td> </td>
                 <td>
-                        <asp:ImageMap ID="ImageMap1" runat="server" Height="48px"  Width="49px" ></asp:ImageMap>
+                    <asp:Label ID="LabelShowMessage" runat="server" BackColor="#0033CC" ForeColor="#CCFFFF" Visible="true"></asp:Label>
                 </td>
                 <td> </td>
             </tr>

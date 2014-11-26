@@ -20,13 +20,13 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title"><a id="A1" runat="server" href="~/">
-                    <img src="~/Images/logo.png"  alt="Room Finder" height="100" width="200"/>
+                    <img src="Images/RoomFinderFinalLogo.png"   alt="Room Finder" height="100" width="200"/> 
                     
 &nbsp;</a></p>
             </div>
 
     <div id="topContent" class="float-right" >
-    <a href="InitialFrontal.aspx" class="link">Room Finder V 1.0 </a>
+    <a href="About.aspx" class="link">About Room Finder </a>
     </div>
  
 
@@ -58,7 +58,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> - Software Engineering Fall 2014</p>
             </div>
             
-                    <asp:Image ID="Image1" runat="server" Height="45px" ImageUrl="~/Images/RoomFinderFinalLogo.png" Width="151px" />
             </a>
         </div>
     </footer>
