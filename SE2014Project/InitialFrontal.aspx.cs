@@ -57,7 +57,14 @@ namespace SE2014Project
              }
              else
              {
-                 this.OutputLiteral.Text = "<h2>We're not sure where that is. Try somewhere else.</h2>";
+                 this.OutputLiteral.Text = "<h2>We're not sure where that is. Try somewhere else.</h2>" +
+                     "</br><h3>This version accepts the following rooms:</h3></br>";
+                 foreach (var v in gr.Verticies)
+                 {
+                     if(v.Type == "room")
+                         this.OutputLiteral.Text +=
+                             v.VertexID + "</br>";
+                 }
              }
         
         }
@@ -79,20 +86,23 @@ namespace SE2014Project
 
         protected void ButtonGo_Click(object sender, EventArgs e)
         {
-            if (validate_Input() != false)
-            {
-                LabelErrorInput.Text = "";
+            //this validation is not needed because ShowData() already validates
+
+            //if (validate_Input() != false)
+            //{
+               // LabelErrorInput.Text = "";
                 SetStartAndEnd();
                 ShowData();
-                LabelErrorInput.Visible = false;
-                ButtonImageCatalog.Visible = true;
-            }
-            else
+               // LabelErrorInput.Visible = false;
+               // ButtonImageCatalog.Visible = true;
+           // }
+            /*else
             {
                 LabelErrorInput.Visible = true;
                 LabelErrorInput.Text = "Type again your rooms(j9,valid). Not a valid entry format.";
                 ButtonImageCatalog.Visible = false;
             }
+             * */
         }
 
         protected void ButtonStepList_Click(object sender, EventArgs e)

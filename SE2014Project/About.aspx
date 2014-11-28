@@ -11,15 +11,16 @@
             RoomFinder v 1.0 <br/>
 
             Created by:<br/>
-            - Josh Larouche <br/>
-            - Charly Recinos <br/>
+            - Josh Larouche&nbsp; <a href="https://github.com/jmasterx/">Git Hub</a> <br/>
+            - Charly Recinos <a href="https://github.com/brecinos/">Git Hub</a> <br/>
 
-            Web application created for the Software Engineering class <br/> 
-            CS410 Fall 2014. Bishop's University. <br/>
-
-
-            
-
+            Web application created for the Software Engineering class 
+            <br />
+            <div>
+                  CS410 Fall 2014. Bishop's University.
+            </div>
+           <br/>
+             <a href="https://github.com/brecinos/SEfall2014">Source Code</a>
         </div>
       
 
