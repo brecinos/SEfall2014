@@ -8,59 +8,54 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link href="~/scripts/Site.css" rel="stylesheet" /> 
-   
+    <link href="~/scripts/Site.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <header>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title"><a id="A1" runat="server" href="~/">
-                    <img src="Images/RoomFinderFinalLogo.png"   alt="Room Finder" height="100" width="200"/> 
-                    
-&nbsp;</a></p>
-            </div>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">
+                        <a id="A1" runat="server" href="~/">
+                            <img src="Images/RoomFinderFinalLogo.png" class="logo" alt="Room Finder" height="100" width="200" />
 
-    <div id="topContent" class="float-right" >
-    <a href="About.aspx" class="link">About Room Finder </a>
-    </div>
- 
+                            &nbsp;</a>
+                    </p>
+                </div>
 
-    <div  class="body">
-    </div>
+                <div class="body">
+                </div>
 
-        <div id="footerContent" class="footer">
-        &nbsp;</div>
+                <div id="footerContent" class="footer">
+                    &nbsp;
+                </div>
 
-                            <nav>
-                    <ul id="menu" aria-hidden="False" hidden="false">
+                <nav>
+                    <ul id="menu" aria-hidden="False">
                         <li><a id="A2" runat="server" href="~/">Search Rooms</a></li>
-                        <li><a id="A3" runat="server" href="~/About"></a></li>
-                        <li><a id="A4" runat="server" href="~/Contact">About Us</a></li>
+                        <li><a id="A4" runat="server" href="~/About.aspx">About Us</a></li>
                     </ul>
                 </nav>
 
             </div>
-            </header>
-         <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
-    </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - Software Engineering Fall 2014</p>
-            </div>
-            
-            </a>
+        </header>
+        <div id="body">
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
         </div>
-    </footer>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <%: DateTime.Now.Year %> - Software Engineering Fall 2014</p>
+                </div>
+            </div>
+        </footer>
 
     </form>
 </body>
